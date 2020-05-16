@@ -3,5 +3,5 @@
   The title is: {{ title }}
 </p>
 
-<input [value]="title" (keyup)="changeTitle('Tada')">
+<input [value]="title" (keyup)="changeTitle($event)">
 <button (click)="changeTitle('Button Clicked!')">Save</button>
