@@ -15,9 +15,12 @@ export class TodoListService {
 
   constructor() { }
 
-
   getTodoList() {
     return this.todoList;
+  }
+
+  addItem(item: TodoItem) { 
+    this.todoList.push(item);
   }
 
 }
