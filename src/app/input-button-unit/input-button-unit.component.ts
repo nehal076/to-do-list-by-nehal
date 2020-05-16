@@ -2,18 +2,16 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input-button-unit',
-  templateUrl: './input-button-unit.component.html',
-  /*template: ` 
-  <p>
-  input-button-unit works!
-  The title is: {{ title }}
-  </p>
+  //templateUrl: './input-button-unit.component.html',
+  template: `
+    <input #inputElementRef
+           [value]="title"
+           (keyup.enter)="onKey($event)">
 
-    <input [value]="title"
-          (keyup.enter)="changeTitle($event.target.value)">
-
-    <button (click)="changeTitle('Button Clicked!')">Save</button>
-  `,*/
+    <button (click)="changeTitle(inputElementRef.value)">
+      Save
+    </button>
+  `,
 
   styleUrls: ['./input-button-unit.component.css']
 })
@@ -26,7 +24,11 @@ export class InputButtonUnitComponent implements OnInit {
     
   }
 
-  changeTitle(newTitle: any) {
+  changeTitle(newTitle: string) {
+    this.title = newTitle;
+  }
+
+  onKey(newTitle: any) {
     this.title = newTitle.target.value; 
   }
 }
