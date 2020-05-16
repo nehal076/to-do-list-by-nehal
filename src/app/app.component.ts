@@ -8,5 +8,10 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent  {
   title = 'My To-Do List App';
+
+  
+  /*addItem(title: string) {
+    this.todoList.push({ title });
+  }*/
   
 }

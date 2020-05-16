@@ -7,11 +7,13 @@ import { HelloComponent } from './hello.component';
 import { InputButtonUnitComponent } from './input-button-unit/input-button-unit.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { ListManagerComponent } from './list-manager/list-manager.component';
+import { TodoListService } from './services/todo-list.service';
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent, InputButtonUnitComponent, TodoItemComponent, ListManagerComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [TodoListService]
 })
 export class AppModule { }
